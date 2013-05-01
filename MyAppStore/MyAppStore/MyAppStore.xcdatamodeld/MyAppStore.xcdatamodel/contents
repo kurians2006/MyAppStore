@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="FavApp" representedClassName="FavApp" syncable="YES">
+        <attribute name="appDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="appID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="appName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateFavorited" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="developer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stars" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="screenshotLinks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinkToScreenshot" inverseName="belongsTo" inverseEntity="LinkToScreenshot" syncable="YES"/>
+    </entity>
+    <entity name="LinkToScreenshot" representedClassName="LinkToScreenshot" syncable="YES">
+        <attribute name="screenshotLink" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FavApp" inverseName="screenshotLinks" inverseEntity="FavApp" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="FavApp" positionX="-281" positionY="-63" width="128" height="178"/>
+        <element name="LinkToScreenshot" positionX="-18" positionY="90" width="128" height="73"/>
+    </elements>
+</model>
